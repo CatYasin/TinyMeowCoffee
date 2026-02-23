@@ -1,6 +1,10 @@
 using UnityEngine;
 
-public class MachineTypes
+public enum MachineTypes
 {
-    
+    Heat,
+    Grind,
+    Froth,
+    Brew,
+    Whip
 }

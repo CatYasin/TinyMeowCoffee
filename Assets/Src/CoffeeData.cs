@@ -8,7 +8,7 @@ public class CoffeeData : ScriptableObject
     public float price;
     public Sprite icon;
 
-    public CofeeType type;
+    
     public IngredientData[] CofeeIngreditens;
 
 

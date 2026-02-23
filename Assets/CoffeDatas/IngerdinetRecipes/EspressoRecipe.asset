@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dca00fd2922b03b4d8133ea400dc7d34, type: 3}
+  m_Name: EspressoRecipe
+  m_EditorClassIdentifier: Assembly-CSharp::IngeridenrsRecipeData
+  input:
+  - {fileID: 11400000, guid: d30e8ed99a989f34c826cc353f89dda9, type: 2}
+  - {fileID: 11400000, guid: 35a089b9341ad71409c71a8da18dd99d, type: 2}
+  isRequiedType: 0
+  requiedType: 0
+  output: {fileID: 11400000, guid: ae04e75f93d51764c851a2eb7cb95053, type: 2}

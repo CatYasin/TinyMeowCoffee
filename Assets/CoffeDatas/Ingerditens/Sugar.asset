@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
   ingredientName: Sugar
   icon: {fileID: 0}
-  canBeHeated: 1
-  heatedVersion: {fileID: 11400000, guid: 76b8eb9f194351e4595ad1d6e23dcfaf, type: 2}
-  canBeWhipped: 0
-  whippedVersion: {fileID: 0}
+  transformations:
+  - machineType: 0
+    result: {fileID: 11400000, guid: 76b8eb9f194351e4595ad1d6e23dcfaf, type: 2}

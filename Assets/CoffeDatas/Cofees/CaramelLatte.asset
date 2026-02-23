@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7aec56d82d644ae4dabee6042f6f8e34, type: 3}
-  m_Name: Latte
+  m_Name: CaramelLatte
   m_EditorClassIdentifier: Assembly-CSharp::CoffeeData
-  Name: Latte
-  price: 35
+  Name: Caramel Latte
+  price: 45
   icon: {fileID: 0}
   CofeeIngreditens:
   - {fileID: 11400000, guid: ae04e75f93d51764c851a2eb7cb95053, type: 2}
   - {fileID: 11400000, guid: 300a661124b69d748aecdda4fc44a229, type: 2}
+  - {fileID: 11400000, guid: 76b8eb9f194351e4595ad1d6e23dcfaf, type: 2}

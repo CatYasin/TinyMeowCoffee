@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IngredientData
   ingredientName: Hot Milk
   icon: {fileID: 0}
-  canBeHeated: 0
-  heatedVersion: {fileID: 0}
+  transformations:
+  - machineType: 2
+    result: {fileID: 11400000, guid: 715bf25681a9714449be36b0390b79ef, type: 2}

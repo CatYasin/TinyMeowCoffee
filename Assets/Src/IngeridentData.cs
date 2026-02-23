@@ -8,11 +8,12 @@ public class IngredientData : ScriptableObject
     public string ingredientName;
     public Sprite icon;
 
-    public bool canBeHeated;
-    public IngredientData heatedVersion;
+    public MachineTransformation[] transformations;
+}
 
-    public bool canBeWhipped;
-    public IngredientData whippedVersion;
-
-
+[System.Serializable]
+public class MachineTransformation
+{
+    public MachineTypes machineType;
+    public IngredientData result;
 }
