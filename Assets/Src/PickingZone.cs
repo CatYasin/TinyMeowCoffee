@@ -1,7 +1,7 @@
 
 
 using System;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class PickingZone : MonoBehaviour
@@ -14,6 +14,8 @@ public class PickingZone : MonoBehaviour
     
 
     public event Action<IngredientData> OnItemCollected;
+
+    public event Action<IHoldingZoneCom> OnHoldingZoneCollected;
 
     private void Awake()
     {
@@ -37,6 +39,10 @@ public class PickingZone : MonoBehaviour
             if (target.TryGetComponent(out IPickup com))
             {
                 OnItemCollected?.Invoke(com.GetItem());
+            }
+            else if (target.TryGetComponent(out IHoldingZoneCom zone))
+            {
+                OnHoldingZoneCollected?.Invoke(zone);
             }
         }
     }

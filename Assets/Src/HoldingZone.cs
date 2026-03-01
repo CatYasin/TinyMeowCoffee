@@ -7,7 +7,7 @@ public class HoldingZoneComponent : MonoBehaviour
     [SerializeField] private int maxCapacity = 4;
 
     private List<IngredientData> storedIngeridents = new();
-
+    private CoffeeData storedCoffee = null;
 
     public bool TryAddIngredient(IngredientData ingredient)
     {
@@ -37,6 +37,21 @@ public class HoldingZoneComponent : MonoBehaviour
 
     public bool isFull()
     {
-        return storedIngeridents.Count >= maxCapacity ;
+        return (storedIngeridents.Count >= maxCapacity || storedCoffee != null) ;
+    }
+
+    public CoffeeData GetCoffee()
+    {
+        return storedCoffee;
+    }
+
+    public bool SetCoffee(CoffeeData coffee)
+    {
+        if (storedCoffee != null)
+        {
+            return false;
+        }
+        storedCoffee = coffee;
+        return true;
     }
 }

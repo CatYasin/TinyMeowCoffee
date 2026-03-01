@@ -1,11 +1,35 @@
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CoffeMachine : MonoBehaviour
 {
-    
+
+    PickingZone pz;
+
+    HoldingZoneComponent hzc;
+
     [SerializeField] private CoffeeData[] allData;
+
+
+
+    private void Awake()
+    {
+        pz = GetComponent<PickingZone>();
+        hzc = GetComponent<HoldingZoneComponent>();
+
+        pz.OnHoldingZoneCollected += HoldingZoneCollected;
+    }
+
+    private void HoldingZoneCollected(IHoldingZoneCom com)
+    {
+        foreach (var data in com.GetIngredients())
+        {
+
+            hzc.TryAddIngredient(data);
+        }
+    }
 
     private CoffeeData process(List<IngredientData> input)
     {

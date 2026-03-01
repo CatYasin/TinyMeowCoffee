@@ -1,12 +1,22 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Cup : MonoBehaviour
+public class Cup : MonoBehaviour , IHoldingZoneCom
 {
     HoldingZoneComponent hzc;
 
     PickingZone pz;
 
+    public List<IngredientData> GetIngredients()
+    {
+        return hzc.GetIngredients();
+    }
+
+    public bool SetCoffee(CoffeeData coffee)
+    {
+        return hzc.SetCoffee(coffee);
+    }
 
     private void Awake()
     {
@@ -14,6 +24,7 @@ public class Cup : MonoBehaviour
         pz = GetComponentInChildren<PickingZone>();
 
         pz.OnItemCollected += ItemCollecting;
+        
     }
 
     private void ItemCollecting(IngredientData data)
@@ -34,4 +45,6 @@ public class Cup : MonoBehaviour
             Debug.Log("Im full man");
         }
     }
+
+    
 }
