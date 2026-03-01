@@ -12,6 +12,8 @@ public class CoffeMachine : MonoBehaviour
 
     [SerializeField] private CoffeeData[] allData;
 
+    
+
 
 
     private void Awake()
@@ -28,6 +30,15 @@ public class CoffeMachine : MonoBehaviour
         {
 
             hzc.TryAddIngredient(data);
+        }
+    }
+
+    public void startProcess()
+    {
+        if (!hzc.SetCoffee(process(hzc.GetIngredients())))
+        {
+            Debug.Log("My brain hurts now so I do that");
+            throw new Exception("OMG I DİNDT FİX THAT BUG");
         }
     }
 

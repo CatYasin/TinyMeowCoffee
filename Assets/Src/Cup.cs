@@ -10,7 +10,9 @@ public class Cup : MonoBehaviour , IHoldingZoneCom
 
     public List<IngredientData> GetIngredients()
     {
-        return hzc.GetIngredients();
+        var t = new List<IngredientData>(hzc.GetIngredients());
+        hzc.Clear();
+        return t;
     }
 
     public bool SetCoffee(CoffeeData coffee)

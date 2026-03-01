@@ -1,11 +1,12 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Button : MonoBehaviour, IPressable
 {
 
-    public event Action OnPressed;
+    public UnityEvent OnPressed;
 
     public void Press()
     {
