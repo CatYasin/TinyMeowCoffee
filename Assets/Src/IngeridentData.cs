@@ -7,6 +7,7 @@ public class IngredientData : ScriptableObject
 {
     public string ingredientName;
     public Sprite icon;
+    public Sprite sprite;
 
     public MachineTransformation[] transformations;
 }

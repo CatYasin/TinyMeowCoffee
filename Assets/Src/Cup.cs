@@ -29,5 +29,9 @@ public class Cup : MonoBehaviour
                 Debug.Log("İt s wor king yeahh");
             }
         }
+        else
+        {
+            Debug.Log("Im full man");
+        }
     }
 }

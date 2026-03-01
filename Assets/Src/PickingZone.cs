@@ -11,7 +11,7 @@ public class PickingZone : MonoBehaviour
 
     [SerializeField] private LayerMask WhichItemsColect;
 
-    private List<Collider2D> results;
+    
 
     public event Action<IngredientData> OnItemCollected;
 
@@ -24,23 +24,19 @@ public class PickingZone : MonoBehaviour
 
     private void Update()
     {
+        GetOverlapComponents();
         
-
-        if (col.IsTouchingLayers(WhichItemsColect))
-        {
-            GetOverlapComponents();
-        }
     }
 
     private void GetOverlapComponents()
     {
-        col.Overlap(results);
-        foreach (var com in results)
+        Collider2D[] tcol = Physics2D.OverlapBoxAll(col.bounds.center, col.bounds.size,0f,WhichItemsColect);
+
+        foreach (Collider2D target in tcol)
         {
-            IPickup target = com.GetComponent<IPickup>();
-            if (target != null)
+            if (target.TryGetComponent(out IPickup com))
             {
-                OnItemCollected?.Invoke(target.GetItem());
+                OnItemCollected?.Invoke(com.GetItem());
             }
         }
     }
